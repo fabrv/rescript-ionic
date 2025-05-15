@@ -1,0 +1,36 @@
+{
+  "name": "ionic-rescript",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "description": "Ionic bindings for Rescript",
+  "main": "src/Ionic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rescript"
+  },
+  "files": [
+    "rescript.json",
+    "README.md",
+    "src/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabrv/rescript-ionic.git"
+  },
+  "keywords": [
+    "rescript",
+    "ionic",
+    "react"
+  ],
+  "author": "Fabrizzio Delcompare",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fabrv/rescript-ionic/issues"
+  },
+  "homepage": "https://github.com/fabrv/rescript-ionic#readme",
+  "dependencies": {
+    "@rescript/core": "^1.6.1",
+    "@rescript/react": "^0.13.1",
+    "rescript": "^11.1.4"
+  }
+}
