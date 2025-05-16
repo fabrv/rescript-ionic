@@ -150,7 +150,7 @@ Most components have bindings, enough to build and run a working app.
     - IonItemSliding
     - IonItemOptions
     - IonItemOption
-    - IonLabel
+    - ~IonLabel~
     - IonNote
 - [X] List
 - [X] Menu
@@ -171,7 +171,6 @@ Most components have bindings, enough to build and run a working app.
 - [X] Tabs
 - [X] Toast
 - [ ] Toggle
-- [ ] Toolbar
-- [ ] IonIcon
+- [X] IonIcon
 - [ ] Animations
 
