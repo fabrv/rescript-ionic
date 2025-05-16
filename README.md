@@ -4,12 +4,12 @@ Use Ionic with Rescript.
 
 ## Getting started 
 
-1. Install
+Install
 ```bash
-npm i rescript-ionic
+npm i rescript-ionic @rescript/react
 ```
 
-2. Add the following your `bs-dependencies` in `rescript.json`
+Add the following your `bs-dependencies` in `rescript.json`
 ```json
 "bs-dependencies": [
     "@rescript/core",
@@ -18,7 +18,7 @@ npm i rescript-ionic
 ]
 ```
 
-3. Open IonicRescript globally.  
+Open IonicRescript globally.  
 You can do this by adding the following `bsc-flags` to your `rescript.json`
 ```json
 {
@@ -29,12 +29,17 @@ You can do this by adding the following `bsc-flags` to your `rescript.json`
 }
 ```
 
+Add JSX to `rescript.json`
+```json
+"jsx": { "version": 4 },
+```
+
 4. At the beggining of each file were you use Ionic open the module
 ```rescript
 open Ionic
 ```
 
-And you are all set!
+And you are all set! Now you can start creating Rescript files inside your Ionic project
 
 ## Example with blank template
 
@@ -48,6 +53,19 @@ Follow the Getting Started section and then create the following files
 `App.res`
 ```rescript
 open Ionic
+
+%%raw(`
+/* Core CSS required for Ionic components to work properly */
+import '@ionic/react/css/core.css';
+`)
+setupIonicReact();
+
+@react.component
+let make = () => {
+  <IonApp>
+    <Home></Home>
+  </IonApp>
+}
 
 @react.component
 let make = () => {
@@ -96,6 +114,9 @@ Finally update your `index.html` to include the build file from Main.res
 ```html
 <script type="module" src="/src/Main.res.mjs"></script>
 ```
+  
+Now open two terminals, in one run `npm run res:dev` and in the other `npm run dev`
+
 ## Current state
 Most components have bindings, enough to build and run a working app. 
   
