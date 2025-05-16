@@ -1,5 +1,5 @@
 {
-  "name": "ionic-rescript",
+  "name": "rescript-ionic",
   "version": "1.0.0",
   "sideEffects": false,
   "description": "Ionic bindings for Rescript",

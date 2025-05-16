@@ -1,5 +1,5 @@
 {
-  "name": "ionic-rescript",
+  "name": "rescript-ionic",
   "namespace": true,
   "sources": {
     "dir": "src",
