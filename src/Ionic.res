@@ -29,6 +29,8 @@ type position = [
 
 type justify = [#start | #end | #"space-between"]
 
+type spinnerTypes = [#bubbles | #circles | #circular | #crescent | #dots | #lines | #"lines-small" | #"lines-sharp" | #"lines-sharp-small"]
+
 module OverlayEventDetail = {
   type t
   @get external data: t => Dict.t<string> = "data"
@@ -455,7 +457,7 @@ module IonSpinner = {
   external make: (
     ~color: predefinedColors=?,
     ~duration: int=?,
-    ~name: string=?,
+    ~name: spinnerTypes=?,
     ~paused: bool=?,
   ) => React.element = "IonSpinner"
 }
@@ -1330,8 +1332,6 @@ module IonRefresher = {
   ) => React.element = "IonRefresher"
 }
 
-type spinnerTypes = [#bubbles | #circles | #circular | #crescent | #dots | #lines | #"lines-small" | #"lines-sharp" | #"lines-sharp-small"]
-
 module IonRefresherContent = {
   @react.component @module("@ionic/react")
   external make: (
@@ -1632,6 +1632,248 @@ module IonToast = {
     ~translucent: bool=?,
     ~trigger: string=?,
   ) => React.element = "IonToast"
+}
+
+module IonToggle = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~children: React.element=?,
+    ~alignment: [#start | #center]=?,
+    ~checked: bool,
+    ~color: predefinedColors=?,
+    ~disabled: bool,
+    ~enableOnOffLabels: bool=?,
+    ~errorText: string=?,
+    ~helperText: string=?,
+    ~justify: justify=?,
+    ~labelPlacement: labelPlacement,
+    ~mode: mode=?,
+    ~name: string,
+    ~required: bool=?,
+    ~value: string=?,
+    ~onIonBlur: CustomEvent.t => unit=?,
+    ~onIonChange: CustomEvent.t => unit=?,
+    ~onIonFocus: CustomEvent.t => unit=?,
+  ) => React.element = "IonToggle"
+}
+
+
+module IonFooter = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~children: React.element=?,
+    ~collapse: [#fade]=?,
+    ~mode: mode=?,
+    ~translucent: bool=?,
+  ) => React.element = "IonFooter"
+}
+
+module IonBackButton = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~color: predefinedColors=?,
+    ~defaultHref: string=?,
+    ~disabled: bool=?,
+    ~icon: string=?,
+    ~mode: mode=?,
+    ~text: string=?,
+    @as("type") ~type_: [#submit | #reset | #button]=?,
+  ) => React.element = "IonBackButton"
+}
+
+
+module IonModal = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~children: React.element=?,
+    ~animated: bool=?,
+    ~backdropBreakpoint: float=?,
+    ~backdropDismiss: bool=?,
+    ~breakpoints: array<float>=?,
+    ~canDismiss: bool=?,
+    ~expandToScroll: bool=?,
+    ~focusTrap: bool=?,
+    ~handle: bool=?,
+    ~handleBehavior: [#none | #cycle]=?,
+    ~htmlAttributes: Js.Dict.t<Js.Json.t>=?,
+    ~initialBreakpoint: float=?,
+    ~isOpen: bool=?,
+    ~keepContentsMounted: bool=?,
+    ~keyboardClose: bool=?,
+    ~mode: mode=?,
+    ~onDidDismiss: CustomEvent.t => unit=?,
+    ~onDidPresent: CustomEvent.t => unit=?,
+    ~onIonBreakpointDidChange: CustomEvent.t => unit=?,
+    ~onIonModalDidDismiss: CustomEvent.t => unit=?,
+    ~onIonModalDidPresent: CustomEvent.t => unit=?,
+    ~onIonModalWillDismiss: CustomEvent.t => unit=?,
+    ~onIonModalWillPresent: CustomEvent.t => unit=?,
+    ~onWillDismiss: CustomEvent.t => unit=?,
+    ~onWillPresent: CustomEvent.t => unit=?,
+    ~presentingElement: Dom.htmlElement=?,
+    ~showBackdrop: bool=?,
+    ~trigger: string=?,
+  ) => React.element = "IonModal"
+}
+
+module IonBackdrop = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~onIonBackdropTap: CustomEvent.t => unit=?,
+    ~stopPropagation: bool=?,
+    ~tappable: bool=?,
+    ~visible: bool=?,
+  ) => React.element = "IonBackdrop"
+}
+
+module IonItemDivider = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~children: React.element=?,
+    ~color: predefinedColors=?,
+    ~mode: mode=?,
+    ~sticky: bool,
+  ) => React.element = "IonItemDivider"
+}
+
+module IonItemGroup = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~children: React.element=?,
+  ) => React.element = "IonItemGroup"
+}
+
+
+module IonItemOption = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~children: React.element=?,
+    ~color: predefinedColors=?,
+    ~disabled: bool,
+    ~download: string=?,
+    ~expandable: bool,
+    ~href: string=?,
+    ~mode: [#ios | #md]=?,
+    ~rel: string=?,
+    ~target: string=?,
+    @as("type") ~type_: [#submit | #reset | #button],
+  ) => React.element = "IonItemOption"
+}
+
+module IonItemOptions = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~children: React.element=?,
+    ~side: [#start | #end],
+    ~onIonSwipe: CustomEvent.t => unit,
+  ) => React.element = "IonItemOptions"
+}
+
+module IonItemSliding = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~disabled: bool=?,
+    ~onIonDrag: CustomEvent.t => unit=?,
+    ~children: React.element=?,
+  ) => React.element = "IonItemSliding"
+}
+
+module IonNote = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~color: string=?,
+    ~mode: mode=?,
+    ~children: React.element=?,
+  ) => React.element = "IonNote"
+}
+
+
+module IonInfiniteScroll = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~disabled: bool=?,
+    ~onIonInfinite: CustomEvent.t => unit=?,
+    ~position: [#top | #bottom]=?,
+    ~threshold: string=?,
+    ~children: React.element=?,
+  ) => React.element = "IonInfiniteScroll"
+}
+
+module IonInfiniteScrollContent = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~loadingSpinner: spinnerTypes=?,
+    ~loadingText: string=?,
+    ~children: React.element=?,
+  ) => React.element = "IonInfiniteScrollContent"
+}
+
+module IonNav = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~children: React.element=?,
+    ~animated: bool=?,
+    ~onIonNavDidChange: CustomEvent.t => unit=?,
+    ~onIonNavWillChange: CustomEvent.t=> unit=?,
+    ~root: Dom.htmlElement=?,
+    ~rootParams: Js.t<'a>=?,
+    ~swipeGesture: bool=?,
+  ) => React.element = "IonNav"
+}
+
+module IonNavLink = {
+  @react.component @module("@ionic/react")
+  external make: (
+    ~ref: ReactDOM.domRef=?,
+    ~key: string=?,
+    ~className: string=?,
+    ~children: React.element=?,
+    ~component: Dom.htmlElement=?,
+    ~componentProps: Js.t<'a>=?,
+    ~routerDirection: [#forward | #back | #root],
+  ) => React.element = "IonNavLink"
 }
 
 module IonicOverrides = {
