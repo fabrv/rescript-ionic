@@ -1,6 +1,6 @@
 {
   "name": "rescript-ionic",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "sideEffects": false,
   "description": "Ionic bindings for Rescript",
   "main": "src/Ionic.js",

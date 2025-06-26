@@ -55,6 +55,7 @@ module IonApp = {
     ~children: React.element,
     ~className: string=?,
     ~ref: ReactDOM.domRef=?,
+    ~style: string=?,
     ~key: string=?,
   ) => React.element = "IonApp"
 }
@@ -68,6 +69,7 @@ module IonIcon = {
   @react.component @module("@ionic/react")
   external make: (
     ~color: predefinedColors=?,
+    ~style: string=?,
     ~flipRtl: bool=?,
     ~icon: string=?,
     ~ios: string=?,
@@ -88,6 +90,7 @@ module IonLabel = {
   @react.component @module("@ionic/react")
   external make: (
     ~color: predefinedColors=?,
+    ~style: string=?,
     ~mode: mode=?,
     ~position: position=?,
     ~className: string=?,
@@ -192,6 +195,7 @@ module IonTabBar = {
     ~children: React.element,
     ~mode: mode=?,
     ~color: predefinedColors=?,
+    ~style: string=?,
     ~selectedTab: string=?,
     ~translucent: bool=?,
     ~slot: slot=?,
@@ -210,6 +214,7 @@ module IonTabs = {
     ~className: string=?,
     ~ref: ReactDOM.domRef=?,
     ~key: string=?,
+    ~style: string=?,
     ~onIonTabsDidChange: customEvent => unit=?,
     ~onIonTabsWillChange: customEvent => unit=?,
   ) => React.element = "IonTabs"
@@ -222,6 +227,7 @@ module IonTabButton = {
     ~href: string=?,
     ~children: React.element,
     ~className: string=?,
+    ~style: string=?,
     ~ref: ReactDOM.domRef=?,
     ~key: string=?,
     ~mode: mode=?,
@@ -260,6 +266,7 @@ module IonContent = {
     ~ref: ReactDOM.domRef=?,
     ~key: string=?,
     ~className: string=?,
+    ~style: string=?,
     ~color: predefinedColors=?,
     ~fixedSlotPlacement: slot=?,
     ~forcedOverscroll: bool=?,
@@ -282,6 +289,8 @@ module IonHeader = {
   @react.component @module("@ionic/react")
   external make: (
     ~children: React.element,
+    ~className: string,
+    ~style: string,
     ~ref: ReactDOM.domRef=?,
     ~key: string=?,
     ~collapse: collapse=?,
@@ -299,6 +308,8 @@ module IonTitle = {
   @react.component @module("@ionic/react")
   external make: (
     ~children: React.element,
+    ~className: string,
+    ~style: string,
     ~ref: ReactDOM.domRef=?,
     ~key: string=?,
     ~color: predefinedColors=?,
@@ -310,6 +321,7 @@ module IonToolbar = {
   @react.component @module("@ionic/react")
   external make: (
     ~className: string=?,
+    ~style: string=?,
     ~children: React.element,
     ~ref: ReactDOM.domRef=?,
     ~key: string=?,
@@ -393,6 +405,7 @@ module IonInput = {
     ~ref: ReactDOM.domRef=?,
     ~key: string=?,
     ~className: string=?,
+    ~style: string=?,
   ) => React.element = "IonInput"
 }
 
@@ -422,6 +435,7 @@ module IonButton = {
     ~key: string=?,
     ~id: string=?,
     ~className: string=?,
+    ~style: string=?,
     ~buttonType: string=?,
     ~color: predefinedColors=?,
     ~disabled: bool=?,
@@ -449,6 +463,7 @@ module IonText = {
     ~color: predefinedColors=?,
     ~mode: mode=?,
     ~children: React.element,
+    ~style: string=?,
   ) => React.element = "IonText"
 }
 
@@ -459,6 +474,8 @@ module IonSpinner = {
     ~duration: int=?,
     ~name: spinnerTypes=?,
     ~paused: bool=?,
+    ~style: string=?,
+    ~className: string=?,
   ) => React.element = "IonSpinner"
 }
 
@@ -515,6 +532,7 @@ module IonSearchbar = {
     ~ref: ReactDOM.domRef=?,
     ~key: string=?,
     ~className: string=?,
+    ~style: string=?,
   ) => React.element = "IonSearchbar"
 }
 
@@ -524,6 +542,8 @@ module IonButtons = {
     ~slot: [#start | #end]=?,
     ~collapse: bool=?,
     ~children: React.element=?,
+    ~className: string=?,
+    ~style: string=?,
   ) => React.element = "IonButtons"
 }
 
@@ -534,6 +554,8 @@ module IonBadge = {
     ~color: predefinedColors=?,
     ~slot: string=?,
     ~children: React.element=?,
+    ~className: string,
+    ~style: string,
   ) => React.element = "IonBadge"
 }
 
@@ -550,6 +572,7 @@ module IonAccordion = {
     ~readonly: bool=?,
     ~toggleIcon: bool=?,
     ~toggleIconSlot: [#end | #start]=?,
+    ~style: string=?,
   ) => React.element = "IonAccordion"
 }
 
@@ -573,6 +596,7 @@ module IonItem = {
     ~target: string=?,
     @as("type") ~type_: [#button | #reset | #submit]=?,
     ~slot: string=?,
+    ~style: string=?,
   ) => React.element = "IonItem"
 }
 
@@ -590,6 +614,7 @@ module IonAccordionGroup = {
     ~expand: [#compact | #inset]=?,
     ~disabled: bool=?,
     ~animated: bool=?,
+    ~style: string=?,
   ) => React.element = "IonItem"
 }
 
@@ -609,6 +634,7 @@ module IonCard = {
     ~rel: string=?,
     ~target: string=?,
     @as("type") ~type_: [#submit | #reset | #button]=?,
+    ~style: string=?,
   ) => React.element = "IonCard"
 }
 
@@ -622,6 +648,7 @@ module IonCardHeader = {
     ~color: predefinedColors=?,
     ~mode: mode=?,
     ~translucent: bool=?,
+    ~style: string=?,
   ) => React.element = "IonCardHeader"
 }
 
@@ -634,6 +661,7 @@ module IonCardTitle = {
     ~children: React.element=?,
     ~color: predefinedColors=?,
     ~mode: mode=?,
+    ~style: string=?,
   ) => React.element = "IonCardTitle"
 }
 
@@ -646,6 +674,7 @@ module IonCardSubtitle = {
     ~children: React.element=?,
     ~color: predefinedColors=?,
     ~mode: mode=?,
+    ~style: string=?,
   ) => React.element = "IonCardSubtitle"
 }
 
@@ -657,6 +686,7 @@ module IonCardContent = {
     ~className: string=?,
     ~children: React.element=?,
     ~mode: mode=?,
+    ~style: string=?,
   ) => React.element = "IonCardContent"
 }
 
@@ -708,7 +738,8 @@ module IonActionSheet = {
     ~onWillPresent: CustomEvent.t => unit=?,
     ~subHeader: string=?,
     ~translucent: bool=?,
-    ~trigger: string=?
+    ~trigger: string=?,
+    ~style: string=?,
   ) => React.element = "IonActionSheet"
 }
 
@@ -792,7 +823,8 @@ module IonAlert = {
     ~onWillPresent: CustomEvent.t => unit=?,
     ~subHeader: string=?,
     ~translucent: bool=?,
-    ~trigger: string=?
+    ~trigger: string=?,
+    ~style: string=?,
   ) => React.element = "IonAlert"
 }
 
@@ -818,7 +850,8 @@ module IonCheckbox = {
     ~onIonFocus: CustomEvent.t => unit=?,
     ~required: bool=?,
     ~value: string=?,
-    ~children: React.element=?
+    ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonCheckbox"
 }
 
@@ -831,7 +864,8 @@ module IonChip = {
     ~color: predefinedColors=?,
     ~disabled: bool=?,
     ~mode: mode=?,
-    ~outline: bool=?
+    ~outline: bool=?,
+    ~style: string=?,
   ) => React.element = "IonChip"
 }
 
@@ -910,6 +944,7 @@ module IonDatetime = {
     ~titleSelectedDatesFormatter: array<string> => string=?,
     ~value: array<string>=?,
     ~yearValues: array<int>=?,
+    ~style: string=?,
   ) => React.element = "IonDatetime"
 }
 
@@ -924,6 +959,7 @@ module IonDateTimeButton = {
     ~disabled: bool=?,
     ~mode: mode=?,
     ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonDateTimeButton"
 }
 
@@ -935,6 +971,7 @@ module IonPicker = {
     ~className: string=?,
     ~mode: mode=?,
     ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonPicker"
 }
 
@@ -949,7 +986,8 @@ module IonPickerColumn = {
     ~mode: mode=?,
     ~onIonChange: CustomEvent.t => unit=?,
     ~value: string=?,
-    ~children: React.element
+    ~children: React.element,
+    ~style: string=?,
   ) => React.element = "IonPickerColumn"
 }
 
@@ -962,7 +1000,8 @@ module IonPickerColumnOption = {
     ~color: predefinedColors=?,
     ~disabled: bool=?,
     ~value: string=?,
-    ~children: React.element
+    ~children: React.element,
+    ~style: string=?,
   ) => React.element = "IonPickerColumnOption"
 }
 
@@ -978,6 +1017,7 @@ module IonFab = {
     ~horizontal: [#start | #end | #center]=?,
     ~vertical: [#top | #bottom | #center]=?,
     ~children: React.element,
+    ~style: string=?,
   ) => React.element = "IonFab"
 }
 
@@ -1004,6 +1044,7 @@ module IonFabButton = {
     ~translucent: bool=?,
     @as("type") ~type_: [#submit | #reset | #button]=?,
     ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonFabButton"
 }
 
@@ -1015,7 +1056,8 @@ module IonFabList = {
     ~className: string=?,
     ~activated: bool=?,
     ~side: [#start | #end | #top | #bottom]=?,
-    ~children: React.element
+    ~children: React.element,
+    ~style: string=?,
   ) => React.element = "IonFabList"
 }
 
@@ -1027,6 +1069,7 @@ module IonGrid = {
     ~className: string=?,
     ~fixed: bool=?,
     ~children: React.element,
+    ~style: string=?,
   ) => React.element = "IonGrid"
 }
 
@@ -1037,6 +1080,7 @@ module IonRow = {
     ~key: string=?,
     ~className: string=?,
     ~children: React.element,
+    ~style: string=?,
   ) => React.element = "IonRow"
 }
 
@@ -1070,7 +1114,8 @@ module IonCol = {
     ~sizeMd: string=?,
     ~sizeSm: string=?,
     ~sizeXl: string=?,
-    ~sizeXs: string=?
+    ~sizeXs: string=?,
+    ~style: string=?,
   ) => React.element = "IonCol"
 }
 
@@ -1084,6 +1129,7 @@ module IonList = {
     ~lines: [#full | #inset | #none]=?,
     ~mode: mode=?,
     ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonList"
 }
 
@@ -1095,7 +1141,8 @@ module IonListHeader = {
     ~className: string=?,
     ~color: predefinedColors=?,
     ~lines: [#full | #inset | #none]=?,
-    ~children: React.element
+    ~children: React.element,
+    ~style: string=?,
   ) => React.element = "IonListHeader"
 }
 
@@ -1106,6 +1153,7 @@ module IonAvatar = {
     ~key: string=?,
     ~className: string=?,
     ~children: React.element,
+    ~style: string=?,
   ) => React.element = "IonAvatar"
 }
 
@@ -1119,7 +1167,8 @@ module IonImg = {
     ~onIonError: CustomEvent.t => unit=?,
     ~onIonImgDidLoad: CustomEvent.t => unit=?,
     ~onIonImgWillLoad: CustomEvent.t => unit=?,
-    ~src: string=?
+    ~src: string=?,
+    ~style: string=?,
   ) => React.element = "IonImg"
 }
 
@@ -1131,6 +1180,7 @@ module IonThumbnail = {
     ~className: string=?,
     ~children: React.element,
     ~slot: string=?,
+    ~style: string=?,
   ) => React.element = "IonThumbnail"
 }
 
@@ -1151,7 +1201,8 @@ module IonMenu = {
     ~onIonWillOpen: CustomEvent.t => unit=?,
     ~side: [#start | #end]=?,
     ~swipeGesture: bool=?,
-    ~menuType: [#overlay | #reveal | #push]
+    ~menuType: [#overlay | #reveal | #push],
+    ~style: string=?,
   ) => React.element = "IonMenu"
 }
 
@@ -1168,6 +1219,7 @@ module IonMenuButton = {
     ~menu: string=?,
     ~mode: mode=?,
     @as("type") ~type_: [#submit | #reset | #button]=?,
+    ~style: string=?,
   ) => React.element = "IonMenuButton"
 }
 
@@ -1180,6 +1232,7 @@ module IonMenuToggle = {
     ~children: React.element=?,
     ~autoHide: bool=?,
     ~menu: string=?,
+    ~style: string=?,
   ) => React.element = "IonMenuToggle"
 }
 
@@ -1196,7 +1249,8 @@ module IonSplitPane = {
     ~contentId: string=?,
     ~disabled: bool,
     ~isVisible: unit => promise<bool>,
-    @as("when") ~when_: when_
+    @as("when") ~when_: when_,
+    ~style: string=?,
   ) => React.element = "IonSplitPane"
 }
 
@@ -1233,6 +1287,7 @@ module IonPopover = {
     ~translucent: bool=?,
     ~trigger: string=?,
     ~triggerAction: [#click | #hover | #"context-menu"]=?,
+    ~style: string=?,
   ) => React.element = "IonPopover"
 }
 
@@ -1253,6 +1308,7 @@ module IonRadio = {
     ~onIonBlur: CustomEvent.t => unit=?,
     ~onIonFocus: CustomEvent.t => unit=?,
     ~value: string=?,
+    ~style: string=?,
   ) => React.element = "IonRadio"
 }
 
@@ -1270,6 +1326,7 @@ module IonRadioGroup = {
     ~name: string=?,
     ~onIonChange: CustomEvent.t => unit=?,
     ~value: string=?,
+    ~style: string=?,
   ) => React.element = "IonRadioGroup"
 }
 
@@ -1308,6 +1365,7 @@ module IonRange = {
     ~step: float=?,
     ~ticks: bool=?,
     ~value: rangeValue=?,
+    ~style: string=?,
   ) => React.element = "IonRange"
 }
 
@@ -1329,6 +1387,7 @@ module IonRefresher = {
     ~pullMax: float=?,
     ~pullMin: float=?,
     ~snapbackDuration: string=?,
+    ~style: string=?,
   ) => React.element = "IonRefresher"
 }
 
@@ -1342,6 +1401,7 @@ module IonRefresherContent = {
     ~pullingText: string=?,
     ~refreshingSpinner: spinnerTypes=?,
     ~refreshingText: string=?,
+    ~style: string=?,
   ) => React.element = "IonRefresherContent"
 }
 
@@ -1352,6 +1412,7 @@ module IonReorder = {
     ~key: string=?,
     ~className: string=?,
     ~children: React.element,
+    ~style: string=?,
   ) => React.element = "IonReorder"
 }
 
@@ -1363,7 +1424,8 @@ module IonReorderGroup = {
     ~className: string=?,
     ~children: React.element,
     ~disabled: bool=?,
-    ~onIonItemReorder: CustomEvent.t => unit
+    ~onIonItemReorder: CustomEvent.t => unit,
+    ~style: string=?,
   ) => React.element = "IonReorderGroup"
 }
 
@@ -1385,6 +1447,7 @@ module IonSegment = {
     ~selectOnFocus: bool=?,
     ~swipeGesture: bool=?,
     ~value: segmentValue=?,
+    ~style: string=?,
   ) => React.element = "IonSegment"
 }
 
@@ -1415,6 +1478,7 @@ module IonSegmentButton = {
     ~mode: mode=?,
     @as("type") ~type_: [#submit | #reset | #button]=?,
     ~value: segmentValue=?,
+    ~style: string=?,
   ) => React.element = "IonSegmentButton"
 }
 
@@ -1425,6 +1489,7 @@ module IonSegmentContent = {
     ~key: string=?,
     ~className: string=?,
     ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonSegmentContent"
 }
 
@@ -1437,6 +1502,7 @@ module IonSegmentView = {
     ~children: React.element=?,
     ~disabled: bool=?,
     ~onIonSegmentViewScroll: CustomEvent.t => unit=?,
+    ~style: string=?,
   ) => React.element = "IonSegmentView"
 }
 
@@ -1480,6 +1546,7 @@ module IonSelect = {
     ~shape: [#round]=?,
     ~toggleIcon: string=?,
     ~value: string=?,
+    ~style: string=?,
   ) => React.element = "IonSelect"
 }
 
@@ -1507,6 +1574,7 @@ module IonSelectModal = {
     ~header: string=?,
     ~multiple: bool=?,
     ~options: array<selectModalOption<'a>>=?,
+    ~style: string=?,
   ) => React.element = "IonSelectModal"
 }
 
@@ -1519,6 +1587,7 @@ module IonSelectOption = {
     ~children: React.element=?,
     ~disabled: bool=?,
     ~value: string=?,
+    ~style: string=?,
   ) => React.element = "IonSelectOption"
 }
 
@@ -1530,6 +1599,7 @@ module IonSkeletonText = {
     ~className: string=?,
     ~children: React.element=?,
     ~animated: bool=?,
+    ~style: string=?,
   ) => React.element = "IonSkeletonText"
 }
 
@@ -1546,6 +1616,7 @@ module IonProgressBar = {
     ~reversed: bool=?,
     @as("type") ~type_: [#determinate | #indeterminate]=?,
     ~value: float=?,
+    ~style: string=?,
   ) => React.element = "IonProgressBar"
 }
 
@@ -1577,6 +1648,7 @@ module IonLoading = {
     ~spinner: spinnerTypes=?,
     ~translucent: bool=?,
     ~trigger: string=?,
+    ~style: string=?,
   ) => React.element = "IonLoading"
 }
 
@@ -1631,6 +1703,7 @@ module IonToast = {
     ~swipeGesture: [#vertical]=?,
     ~translucent: bool=?,
     ~trigger: string=?,
+    ~style: string=?,
   ) => React.element = "IonToast"
 }
 
@@ -1657,6 +1730,7 @@ module IonToggle = {
     ~onIonBlur: CustomEvent.t => unit=?,
     ~onIonChange: CustomEvent.t => unit=?,
     ~onIonFocus: CustomEvent.t => unit=?,
+    ~style: string=?,
   ) => React.element = "IonToggle"
 }
 
@@ -1671,6 +1745,7 @@ module IonFooter = {
     ~collapse: [#fade]=?,
     ~mode: mode=?,
     ~translucent: bool=?,
+    ~style: string=?,
   ) => React.element = "IonFooter"
 }
 
@@ -1686,6 +1761,7 @@ module IonBackButton = {
     ~icon: string=?,
     ~mode: mode=?,
     ~text: string=?,
+    ~style: string=?,
     @as("type") ~type_: [#submit | #reset | #button]=?,
   ) => React.element = "IonBackButton"
 }
@@ -1725,6 +1801,7 @@ module IonModal = {
     ~presentingElement: Dom.htmlElement=?,
     ~showBackdrop: bool=?,
     ~trigger: string=?,
+    ~style: string=?,
   ) => React.element = "IonModal"
 }
 
@@ -1738,6 +1815,7 @@ module IonBackdrop = {
     ~stopPropagation: bool=?,
     ~tappable: bool=?,
     ~visible: bool=?,
+    ~style: string=?,
   ) => React.element = "IonBackdrop"
 }
 
@@ -1751,6 +1829,7 @@ module IonItemDivider = {
     ~color: predefinedColors=?,
     ~mode: mode=?,
     ~sticky: bool,
+    ~style: string=?,
   ) => React.element = "IonItemDivider"
 }
 
@@ -1761,6 +1840,7 @@ module IonItemGroup = {
     ~key: string=?,
     ~className: string=?,
     ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonItemGroup"
 }
 
@@ -1781,6 +1861,7 @@ module IonItemOption = {
     ~rel: string=?,
     ~target: string=?,
     @as("type") ~type_: [#submit | #reset | #button],
+    ~style: string=?,
   ) => React.element = "IonItemOption"
 }
 
@@ -1793,6 +1874,7 @@ module IonItemOptions = {
     ~children: React.element=?,
     ~side: [#start | #end],
     ~onIonSwipe: CustomEvent.t => unit,
+    ~style: string=?,
   ) => React.element = "IonItemOptions"
 }
 
@@ -1805,6 +1887,7 @@ module IonItemSliding = {
     ~disabled: bool=?,
     ~onIonDrag: CustomEvent.t => unit=?,
     ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonItemSliding"
 }
 
@@ -1817,6 +1900,7 @@ module IonNote = {
     ~color: string=?,
     ~mode: mode=?,
     ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonNote"
 }
 
@@ -1832,6 +1916,7 @@ module IonInfiniteScroll = {
     ~position: [#top | #bottom]=?,
     ~threshold: string=?,
     ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonInfiniteScroll"
 }
 
@@ -1844,6 +1929,7 @@ module IonInfiniteScrollContent = {
     ~loadingSpinner: spinnerTypes=?,
     ~loadingText: string=?,
     ~children: React.element=?,
+    ~style: string=?,
   ) => React.element = "IonInfiniteScrollContent"
 }
 
@@ -1860,6 +1946,7 @@ module IonNav = {
     ~root: Dom.htmlElement=?,
     ~rootParams: Js.t<'a>=?,
     ~swipeGesture: bool=?,
+    ~style: string=?,
   ) => React.element = "IonNav"
 }
 
@@ -1873,6 +1960,7 @@ module IonNavLink = {
     ~component: Dom.htmlElement=?,
     ~componentProps: Js.t<'a>=?,
     ~routerDirection: [#forward | #back | #root],
+    ~style: string=?,
   ) => React.element = "IonNavLink"
 }
 
